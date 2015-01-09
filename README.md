@@ -34,3 +34,14 @@ You can now log into your running CentOS with openSCAP and SSG installed.
 ```
 vagrant ssh
 ```
+
+# Building from Source
+
+Want to understand how this virtual machine was assembled? All necessary files are included in the `source` subdirectory. 
+
+File                         | Description
+-----------------------------|---------------------------------------------------------------------------
+source/Vagrantfile           | Vagrantfile to launch CentOS 6.5 testmachine that is not fully locked down
+source/CHECKLIST.md          | List steps to semi-manually configure the CentOS vm to the server baseline profile
+source/vbkick-template       | VBKick files to build the CentOS 6.5 machine image from source CentOS files
+
