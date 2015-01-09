@@ -30,10 +30,39 @@ cd govready-centos-6.5-x86_64-noX_server_vagrant
 vagrant up
 ```
 
-You can now log into your running CentOS with openSCAP and SSG installed.
+You can now log into your running CentOS with GovReady, openSCAP and SCAP-Security-Guide installed.
 ```
 vagrant ssh
 ```
+
+# GovReady - Check Configuration
+
+Run these commands from your GovReady virtual machine.
+
+You will need to be root to run all tests. On a standard vagrant vm, the root password is `vagrant`.
+```
+# After you logged into your vm
+# You will need to be root to run all tests
+su -
+
+cd /home/myfisma
+govready scan
+```
+
+You should see the results:
+```
+OpenSCAP NIST Certified SCAP Scanner Results for Profile "server"
+
+The "server" profile identifies 13 high severity controls. OpenSCAP says 12 passing and 1 failing.
+The "server" profile identifies 89 medium severity controls. OpenSCAP says 88 passing and 1 failing.
+The "server" profile identifies 72 low severity controls. OpenSCAP says 68 passing and 4 failing.
+
+```
+
+### Why are some tests failing?
+
+The few tests that are failing would effect the smooth running of vagrant, for example, setting a boot password.
+
 
 # Building from Source
 
